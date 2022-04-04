@@ -8,13 +8,10 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <nav className='foo'>
+        <section className="container">
             {/* <img src={logo} alt="" /> */}
             <div>
-                {/* <a href="/shop">Shop</a>
-                <a href="/orders">Orders</a>
-                <a href="/inventory">Inventory</a>
-                <a href="/about">About</a> */}
+
                 <h1> Your Next Book,Your Favorite Book
                 </h1>
 
@@ -38,7 +35,7 @@ const Home = () => {
             </div>
 
 
-        </nav >
+        </section >
 
 
 
