@@ -1,17 +1,29 @@
-.container{
-    width: 300px;
-    height: 200px;
+.container {
+    width: 400px;
+    height: 400px;
     border: 1px solid #95A0A7;
     border-radius: 8px;
     position: relative;
 }
 
 
+.container img {
+    width: 486px;
+    height: 386px;
+    border-radius: 8px;
+    margin: 7px;
+}
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+    margin: 100px 50px;
+}
 
 
 /* 
-.foor{
+.container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
