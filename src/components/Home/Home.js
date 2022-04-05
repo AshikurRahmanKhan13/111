@@ -2,10 +2,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import trainer1 from '../../images/trainer1.jpg';
+import Product from '../Product/Product';
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
+import useProducts from '../../hooks/useProducts';
 
-const Home = (product, handleAddToCart) => {
-    const { name, img, seller, price, ratings, review } = product;
+const Home = () => {
+    const navigate = useNavigate();
+    const [products, setProducts] = useProducts();
+    // const { name, img, seller, price, ratings, review } = useProducts();
+   
     return (
         <section className="container">
             {/* <img src={logo} alt="" /> */}
@@ -14,54 +20,60 @@ const Home = (product, handleAddToCart) => {
             <div>
                 <img src={trainer1} class="card-img-top" alt="..." />
 
-
-
-
-
             </div>
             <div>
 
                 <h1> Your Next Book,Your Favorite Book
                 </h1>
-
                 {/* import rb3 from '../../images/rb3.jpg'; */}
-
                 <p> Choose your favorite book.We have huge collections here for you.
-
-
-                </p>
-
-
-
+               </p>
             </div>
-
-
             <h1>Customer Review(3)
 
 
             </h1>
 
+            <div className="cart-cr">
+                {/* <Cart cart={cart}> */}
+                    {/* <h2>Total Reviews : {products.length}</h2> */}
 
 
+                    <ul>
+                {
+                    products.slice(0,3).map(one => <li className="pdf"> Name:{one.name}   Review:{one.review}  Ratings:{one.ratings} </li>)
+                }
+            </ul>
 
+            {/* <ul>
+                {
+                    cart.map(one => <li className="pdf"> <img src={one.img} alt="" /> {one.name} "</li>)
+                }
+            </ul> */}
 
-
-            return (
-            <div className='product'>
-                {/* <img src={img} alt=""></img> */}
-                <div className='product-info'>
-                    <p className='product-name'>{name}</p>
-                    {/* <p>Price: ${price}</p> */}
-                    <p><small>Review: {review}</small></p>
-                    <p><small>Ratings: {ratings} stars</small></p>
-                </div>
-                {/* <button onClick={() => handleAddToCart(product)} className='btn-cart'>
-                <p className='btn-text'>Add to Cart</p>
-                <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
-            </button> */}
+            
+                    {/* <p className='product-name'>{products.name}</p>
+                
+                <p><small>Review: {products.review}</small></p>
+                <p><small>Ratings: {products.ratings} stars</small></p> */}
+                {/* </Cart> */}
             </div>
-            )
 
+           
+
+            <div className="cart-container">
+                {/* <Cart cart={cart}> */}
+                    <button onClick={() => navigate('/shop')}>See All Reviews </button>
+                {/* </Cart> */}
+            </div>
+        
+
+
+
+
+
+
+       
 
 
 
@@ -81,6 +93,8 @@ const Home = (product, handleAddToCart) => {
 
     );
 };
+
+
 
 export default Home;
 
@@ -109,3 +123,21 @@ export default Home;
 </div>
 </div>
 </div> */}
+
+
+
+// return (
+//     <div className='product'>
+        
+//         <div className='product-info'>
+//             <p className='product-name'>{name}</p>
+//             {/* <p>Price: ${price}</p> */}
+//             <p><small>Review: {review}</small></p>
+//             <p><small>Ratings: {ratings} stars</small></p>
+//         </div>
+//         {/* <button onClick={() => handleAddToCart(product)} className='btn-cart'>
+//         <p className='btn-text'>Add to Cart</p>
+//         <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+//     </button> */}
+//     </div>
+//     )

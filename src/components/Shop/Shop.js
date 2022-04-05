@@ -7,6 +7,7 @@ import Product from '../Product/Product';
 import './Shop.css';
 
 const Shop = () => {
+    <h1>What Our Customer's Say</h1>
     const [products, setProducts] = useProducts();
     const [cart, setCart] = useState([]);
 

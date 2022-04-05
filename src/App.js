@@ -10,6 +10,7 @@ import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import Footer from './components/footer/Footer';
 import Dash from './components/Dash/Dash';
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
   return (
@@ -18,24 +19,28 @@ function App() {
 
 
       <Routes>
-        <Route path='/' element={<home></home>}></Route>
 
 
+
+
+
+        <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/dash' element={<Dash></Dash>}></Route>
         <Route path='/shop' element={<Shop></Shop>}></Route>
 
         <Route path='/dashboard' element={<Dashboard ></Dashboard>}></Route>
-        {/* <Route path='/orders' element={<Orders></Orders>}></Route> */}
+
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>
 
 
       <div>
 
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </div>
 
 

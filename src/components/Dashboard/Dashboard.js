@@ -104,6 +104,7 @@ const Dashboard = () => {
             <div className='board'>
                 <BarChart width={800} height={400} data={datas}>
                     <Bar dataKey="investment" fill="#8884d8" />
+                    <Bar dataKey="revenue" fill="Green" />
                     <XAxis dataKey="month"></XAxis>
                     <Tooltip />
                     <YAxis></YAxis>
